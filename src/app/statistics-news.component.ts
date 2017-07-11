@@ -38,14 +38,14 @@ export class StatisticsNewsComponent implements OnInit {
   countAuthors(): number {
     const res: string[] = [];
     for (const item of this.curentChanel) {
-      if (item.author = ' ') {
+      if (item.author === ' ') {
         continue;
       }
       if (!this.findAuthor(item.author, res)) {
         res.push(item.author);
       }
     }
+    console.log(res.length);
     return res.length;
-
   }
 }

@@ -17,15 +17,17 @@ export class ListRssComponent implements OnInit { // для проверки г�
 
   ngOnInit(): void {
     this.listOfFeeds = this.rss.allRss;
+    console.log(this.listOfFeeds);
   }
 
   addFeed(url: string): void {
-    this.rss.setFeed(url); // todo возможно  функцию refresh
+    this.rss.setFeed(url);
     // todo сделать валидацию по статусу
     // todo не работает на гифках
     // todo сделать валидацию на повторение новости
     // todo не корректно работает если нет картинки
     this.listOfFeeds = this.rss.allRss;
+    console.log(this.listOfFeeds);
   }
 
   deleteFeed(id: string): void {
