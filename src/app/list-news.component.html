@@ -1,0 +1,11 @@
+
+<div (click)="goToStats()" class="stats">Статистика</div>
+<div *ngFor="let to of currentNews; let i = index">
+  <div (click)="goToDetail(i)" class="item">
+    <img src={{to.enclosure.link}} class="logoImage">
+    <div class="content">
+      <div class="newsTitle">{{to.title}}</div>
+      <div class="containerText" [innerHTML]=to.description></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="content">
+  <div (click)="goToStats()" class="statsButton">Статистика</div>
+  <div class="header">
+    <label>Введите ссылку на новость</label>
+    <input #link placeholder="Ссылка" >
+    <button (click)="addFeed(link.value); link.value =''" >Добавить</button>
+  </div>
+
+  <div *ngFor="let to of listOfFeeds" class="containerItem">
+    <img src={{to.feed.image}} (click)="goToDetail(to.id)" class="logo">
+    <div class="containerLink">
+      <a [routerLink]="['/feed',to.id]" class="linkRss">{{to.feed.title}}</a>
+    </div>
+    <div (click)="deleteFeed(to.id)" class="deleteButton">
+      Удалить
+      <!--<button *ngIf="this.listOfFeeds.length != 0" (click)="deleteFeed(to.id)">Удалить</button>-->
+    </div>
+  </div>
+</div>

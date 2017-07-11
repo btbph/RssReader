@@ -1,0 +1,36 @@
+.item{
+  background-color: white;
+  margin:10px auto;
+  padding: 15px;
+  max-width: 1000px;
+  max-height: 300px;
+  overflow: hidden;
+}
+.item:hover{
+  cursor: pointer;
+}
+
+.containerText{
+  text-decoration: none;
+  color: black;
+}
+
+.newsTitle{
+  font-size:14pt;
+  font-weight: bold;
+  text-align: center;
+}
+
+.logoImage{
+  max-height: 200px;
+  max-width: 200px;
+  margin: 0 40%;
+}
+
+.content{
+ // float: right;
+}
+.stats:hover{
+  cursor: pointer;
+}
+

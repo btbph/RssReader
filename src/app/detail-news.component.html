@@ -1,0 +1,7 @@
+<div (click)="goToStats()" class="stats">Статистика</div>
+<div class="content">
+  <div class="title">{{currentNews.title}}</div>
+  <div>{{currentNews.pubDate}}</div>
+  <img src={{currentNews.enclosure.link}} class="imgLogo">
+  <div [innerHTML]=currentNews.description ></div>
+</div>

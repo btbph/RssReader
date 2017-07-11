@@ -1,0 +1,46 @@
+
+.header{
+  margin: 0 auto;
+  width: 500px;
+}
+
+.linkRss{
+  text-decoration: none;
+  color: black;
+  font:19pt bold;
+  position: absolute;
+  top: 50px;
+  left: 30%;
+}
+
+.containerItem{
+  margin: 10px auto;
+  padding: 15px;
+  width: 750px;
+  background-color: white;
+  position: relative;
+}
+
+.deleteButton{
+  float: right;
+  margin: -58px 10px;
+  color: #8D9194;
+}
+
+.deleteButton:hover{
+  color: red;
+  cursor: pointer;
+}
+.logo{
+  max-width: 100px;
+  max-height: 100px;
+  cursor: pointer;
+}
+
+.statsButton{
+
+}
+
+.statsButton:hover{
+  cursor: pointer;
+}
