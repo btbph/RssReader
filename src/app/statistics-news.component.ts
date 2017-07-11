@@ -16,17 +16,17 @@ import {FeedContent} from './feed-content';
 
 export class StatisticsNewsComponent implements OnInit {
 
-  private cuurentChanel: FeedContent[];
+  private curentChanel: FeedContent[];
   private numberOfAuthors: number;
 
   constructor (private rss: RSSService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.cuurentChanel = this.rss.getNews(this.route.snapshot.url[1].toString());
+    this.curentChanel = this.rss.getNews(this.route.snapshot.url[1].toString());
     this.numberOfAuthors = this.countAuthors();
   }
 
-  private findAuthor(author:string, arr:string[]): boolean {
+  private findAuthor(author: string, arr: string[]): boolean {
     for (const item of arr) {
       if (author === item) {
         return true;
@@ -37,8 +37,8 @@ export class StatisticsNewsComponent implements OnInit {
 
   countAuthors(): number {
     const res: string[] = [];
-    for (const item of this.cuurentChanel) {
-      if (item.author = '') {
+    for (const item of this.curentChanel) {
+      if (item.author = ' ') {
         continue;
       }
       if (!this.findAuthor(item.author, res)) {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
 import {RSSService} from './rss.service';
 
@@ -10,10 +10,14 @@ import {Rss} from './news';
   templateUrl: './list-rss.component.html',
   styleUrls: ['./list-rss.component.scss']
 })
-export class ListRssComponent { // для проверки графиков https://techcrunch.com/feed/
+export class ListRssComponent implements OnInit { // для проверки графиков https://techcrunch.com/feed/
 
   listOfFeeds: Rss[] = [];
   constructor (private rss: RSSService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.listOfFeeds = this.rss.allRss;
+  }
 
   addFeed(url: string): void {
     this.rss.setFeed(url); // todo возможно  функцию refresh
