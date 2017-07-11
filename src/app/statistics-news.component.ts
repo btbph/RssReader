@@ -9,7 +9,8 @@ import {FeedContent} from './feed-content';
 
 @Component({
   selector: 'app-stats-news',
-  templateUrl: './statistics-news.html'
+  templateUrl: './statistics-news.html',
+  styleUrls: ['./statistics-news.component.scss']
 
 })
 
@@ -25,13 +26,22 @@ export class StatisticsNewsComponent implements OnInit {
     this.numberOfAuthors = this.countAuthors();
   }
 
+  private findAuthor(author:string, arr:string[]): boolean {
+    for (const item of arr) {
+      if (author === item) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   countAuthors(): number {
     const res: string[] = [];
     for (const item of this.cuurentChanel) {
       if (item.author = '') {
         continue;
       }
-      if (!res.find(x => x === item.author)) {
+      if (!this.findAuthor(item.author, res)) {
         res.push(item.author);
       }
     }
